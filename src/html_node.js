@@ -1043,10 +1043,6 @@ class HTMLNode {
             } else if ((targetCharset.toUpperCase() === 'UTF-8') && (HTMLNode.#is_utf8(text))) {
                 // Debug'The source charset was incorrectly detected as ' + sourceCharset + ' but should have been UTF-8'
                 converted_text = text;
-            } else {
-                const Iconv = require('iconv').Iconv;
-                const iconv = new Iconv(sourceCharset, targetCharset);
-                converted_text = iconv.convert(text);
             }
         }
 
